@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Unofficial React Practice Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Build an app that displays all available items in the BorkStop Shop. Allow an admin to add new items to the shop.
 
-## Available Scripts
+You have 3 hours to build this application. 
 
-In the project directory, you can run:
+### Iteration 0
 
-### `npm start`
+Set up the API. Find instructions in the repo readme.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Do not nest the backend repo in the front end repo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Iteration 1
+Get all existing available items on page load and display them on the dom. 
 
-### `npm test`
+It does not need to look identical to the mock up at this time. Focus on displaying the data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Iteration 2
 
-### `npm run build`
+Create a controlled form component to create a new item for the shop (look into the API documentation to see what information is expected and what datatypes each piece should be). As a user types into the input fields, the form component's state should change (this is what 'controlled from' means). When the user clicks the 'Add New Item' button, the applicaiton should update the App's state. The new item should display with all of the other items. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Do not worry about making the POST to the backend yet. Focus on getting it to work without that first. This means that it is okay that the new item disappears when the page is refreshed. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Iteration 3
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Add some tests. The should cover:
+- What should be displayed on the page when the user first visits
+- When data is typed into the form, the value is reflected in the form input
+- The flow of adding a new item to the shop inventory
 
-### `npm run eject`
+### Iteration 4 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Add in the POST functionality that you skipped over in Iteration 2. When the user adds a new item to the shop, the application should POST to the API. The new item should still exist when the page is refreshed. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You may keep any API calls you make in the App component or wherever is easiest for you. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Iteration 5 (extension)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Add a Delete button to each item in the shop so that an admin can remove an item that is out of stock. The deletion should persist upon page load, so you'll need to communicate appropriately to the API.
