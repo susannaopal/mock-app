@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import ItemsContainer from './ItemsContainer';
+import ItemsContainer from '../ItemsContainer';
 
 class App extends Component {
   constructor () {
@@ -12,7 +12,7 @@ class App extends Component {
 
   render() {
     return (
-      
+      <>
       <div className="App">
         <h1 className='app-title title-colors'>BorkStop</h1>
         <h2 className='title-colors'>Your dog's one stop shop for toys and treats!</h2>
@@ -20,9 +20,9 @@ class App extends Component {
           <ItemsContainer />
         </div>
         <div>
-          
         </div>
       </div>
+      </>
     )
   }
 }
