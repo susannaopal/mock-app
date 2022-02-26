@@ -4,6 +4,8 @@ Build an app that displays all available items in the BorkStop Shop. Allow an ad
 
 You have 3 hours to build this application. 
 
+!['image of completed app'](./src/assets/example-app.png)
+
 ### Iteration 0
 
 Set up the API. Find instructions in the repo readme.
