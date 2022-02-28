@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 import ItemsContainer from '../ItemsContainer';
+import { fetchAllItems } from '../apiCalls.js';
 
 class App extends Component {
   constructor () {
     super()
     this.state = {
-      inventory: [{ id: 18907224, name: 'Rope', type: 'toy', price: 14.99, numberAvailable: 3 }]
+      inventory: [
+        // { id: 18907224, name: 'Rope', type: 'toy', price: 14.99, numberAvailable: 3 },
+        // { id: 18907228, name: 'Bone', type: 'snack', price: 1.99, numberAvailable: 13 }
+        ]
     }
+  }
+
+  componentDidMount = () => {
+    fetchAllItems()
+    .then(data => this.setState({ inventory: data }))
+
   }
 
   render() {

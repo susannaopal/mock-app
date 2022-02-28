@@ -14,4 +14,3 @@ const Item = ({id, name, type, price, numberAvailable}) => {
 
 export default Item;
 
-      // inventory: [{ id: 18907224, name: 'Rope', type: 'toy', price: 14.99, numberAvailable: 3 }]
