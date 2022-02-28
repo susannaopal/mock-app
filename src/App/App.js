@@ -15,7 +15,10 @@ class App extends Component {
   componentDidMount = () => {
     fetchAllItems()
     .then(data => this.setState({ inventory: data }))
+  }
 
+  addNewItem = (addedItem) => {
+    this.setState({ inventory: [...this.state.inventory, addedItem]})
   }
 
   render() {
@@ -26,10 +29,10 @@ class App extends Component {
         <h1 className='app-title title-colors'>BorkStop</h1>
         <h2 className='title-colors'>Your dog's one stop shop for toys and treats!</h2>
         <div>
-        <Form />
+        <Form addNewItem={this.addNewItem} />
         </div>
         <div>
-          <ItemsContainer items={this.state.inventory}/>
+          <ItemsContainer items={this.state.inventory} />
         </div>
       </div>
       </>

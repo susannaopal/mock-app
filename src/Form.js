@@ -16,43 +16,63 @@ class Form extends Component {
     this.setState({ [event.target.name]: event.target.value })
   }
 
+  submitForm = (event) => {
+    event.preventDefault()
+    const newItemAdded = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addNewItem(newItemAdded)
+    this.clearInputs()
+  }
+
+  clearInputs = () => {
+    this.setState({ 
+      name: '',
+      type: '',
+      price: '',
+      numberAvailable: ''
+    })
+  }
+
   render() {
     return (
-      <div className='form'>
+      
         <form>
-          <label htmlFor="name">Item name:</label>
-          <input id="myInput" 
+        <label htmlFor="name">Item name:</label>
+          <input 
             type="text"
             name='name'
             value={this.state.name}
             onChange={event => this.handleChange(event)}
           />
-          <label htmlFor="type">Type:</label>
-          <select value={this.state.item} onChange={event => this.handleChange(event)}>
-           <option name='toy' value="toy">Toy</option>
-           <option name='treat' value="treat">Treat</option>
-           </select>
-           <label htmlFor="price">Price:</label>
-          <input id="myInput" 
+          <label htmlFor="name">Type:</label>
+          <input 
+            type="text"
+            name='type'
+            value={this.state.type}
+            onChange={event => this.handleChange(event)}
+          />
+          <label htmlFor="name">Price:</label>
+          <input 
             type="text"
             name='price'
             value={this.state.price}
+            onChange={event => this.handleChange(event)}
           />
-          <label htmlFor="numberAvailable">Available:</label>
-          <input id="myInput" 
+          <label htmlFor="name">Available:</label>
+          <input 
             type="text"
             name='numberAvailable'
             value={this.state.numberAvailable}
             onChange={event => this.handleChange(event)}
           />
-          <button>Submit Item</button>
+          <button onClick={event => this.submitForm(event)}>Submit Item</button>
         </form>
-      </div>
     )
   }
   }
 
 
 export default Form;
-
-// { id: 18907224, name: 'Rope', type: 'toy', price: 14.99, numberAvailable: 3 }
+          
