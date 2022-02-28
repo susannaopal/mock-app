@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ItemsContainer from '../ItemsContainer';
 import { fetchAllItems } from '../apiCalls.js';
+import Form from '../Form.js'
 
 class App extends Component {
   constructor () {
@@ -25,9 +26,10 @@ class App extends Component {
         <h1 className='app-title title-colors'>BorkStop</h1>
         <h2 className='title-colors'>Your dog's one stop shop for toys and treats!</h2>
         <div>
-          <ItemsContainer items={this.state.inventory}/>
+        <Form />
         </div>
         <div>
+          <ItemsContainer items={this.state.inventory}/>
         </div>
       </div>
       </>
