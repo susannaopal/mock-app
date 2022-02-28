@@ -7,10 +7,7 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      inventory: [
-        // { id: 18907224, name: 'Rope', type: 'toy', price: 14.99, numberAvailable: 3 },
-        // { id: 18907228, name: 'Bone', type: 'snack', price: 1.99, numberAvailable: 13 }
-        ]
+      inventory: []
     }
   }
 
