@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ItemsContainer from '../ItemsContainer';
-import { fetchAllItems } from '../apiCalls.js';
+import { fetchAllItems, postNewItem } from '../apiCalls.js';
 import Form from '../Form.js'
 
 class App extends Component {
@@ -19,6 +19,7 @@ class App extends Component {
 
   addNewItem = (addedItem) => {
     this.setState({ inventory: [...this.state.inventory, addedItem]})
+    postNewItem(addedItem)
   }
 
   render() {
