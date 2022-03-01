@@ -52,17 +52,17 @@ class Form extends Component {
             name='type'
             value={this.state.type}
             onChange={event => this.handleChange(event)}
-          />
+          />   
           <label htmlFor="name">Price:</label>
           <input 
-            type="text"
+            type="number"
             name='price'
             value={this.state.price}
             onChange={event => this.handleChange(event)}
           />
           <label htmlFor="name">Available:</label>
           <input 
-            type="text"
+            type="number"
             name='numberAvailable'
             value={this.state.numberAvailable}
             onChange={event => this.handleChange(event)}
@@ -72,7 +72,13 @@ class Form extends Component {
     )
   }
   }
-
-
 export default Form;
-          
+
+          //attempt to create a proper drop down
+          // <label>
+          // Select Type:
+          // <select value={this.state.type} onChange={event => this.handleChange(event)}>
+          //   <option value="toy">Toy</option>
+          //   <option value="treat">Treat</option>
+          // </select>
+          //  </label>
